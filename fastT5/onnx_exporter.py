@@ -35,7 +35,7 @@ def create_t5_encoder_decoder(pretrained_version="t5-base"):
         decoder_with_lm_head: pytorch t5 decoder with a language modeling head
     """
 
-    model = T5ForConditionalGeneration.from_pretrained(pretrained_version, use_auth_token=get_auth_token())
+    model = T5ForConditionalGeneration.from_pretrained(pretrained_version, use_auth_token=get_auth_token(), from_tf=True)
 
     return turn_model_into_encoder_decoder(model)
 
